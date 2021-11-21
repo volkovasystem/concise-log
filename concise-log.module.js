@@ -54,8 +54,8 @@ const PROMPT_LOG_TYPE = (
 	"[prompt]"
 );
 
-const log = (
-	function log( ){
+const conciseLog = (
+	function conciseLog( ){
 		/*;
 			@definition:
 				@procedure: #log
@@ -315,7 +315,7 @@ const log = (
 const logError = (
 	function logError( ){
 		return	(
-					log
+					conciseLog
 					.apply(
 						(
 								(
@@ -374,7 +374,7 @@ const logError = (
 const logWarn = (
 	function logWarn( ){
 		return	(
-					log
+					conciseLog
 					.apply(
 						(
 							this
@@ -403,7 +403,7 @@ const logWarn = (
 const logDone = (
 	function logDone( ){
 		return	(
-					log
+					conciseLog
 					.apply(
 						(
 							this
@@ -432,7 +432,7 @@ const logDone = (
 const logPrompt = (
 	function logPrompt( ){
 		return	(
-					log
+					conciseLog
 					.apply(
 						(
 							this
@@ -468,7 +468,7 @@ const setLogEmitter = (
 				)
 		){
 			(
-					log
+					conciseLog
 					.emitter
 				=	(
 						emitter
@@ -487,7 +487,7 @@ const setLogEmitter = (
 );
 
 (
-		log
+		conciseLog
 		.error
 	=	(
 			logError
@@ -495,7 +495,7 @@ const setLogEmitter = (
 );
 
 (
-		log
+		conciseLog
 		.warn
 	=	(
 			logWarn
@@ -503,7 +503,7 @@ const setLogEmitter = (
 );
 
 (
-		log
+		conciseLog
 		.done
 	=	(
 			logDone
@@ -511,7 +511,7 @@ const setLogEmitter = (
 );
 
 (
-		log
+		conciseLog
 		.prompt
 	=	(
 			logPrompt
@@ -519,7 +519,7 @@ const setLogEmitter = (
 );
 
 (
-		log
+		conciseLog
 		.setLogEmitter
 	=	(
 			setLogEmitter
@@ -540,7 +540,7 @@ const setLogEmitter = (
 						concise
 						.log
 					=	(
-							log
+							conciseLog
 						)
 				);
 			}
@@ -552,6 +552,6 @@ const setLogEmitter = (
 		module
 		.exports
 	=	(
-			log
+			conciseLog
 		)
 );

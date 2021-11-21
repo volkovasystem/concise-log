@@ -1,57 +1,57 @@
 *
 
+!.editorconfig
+
 !.gitignore
 
 !.npmignore
 
-!.editorconfig
-
 !LICENSE
 
-!*.sh
 !*.json
 !*.md
+!*.sh
 !*.txt
 !*.xml
 
+!*.css
+!*.html
 !*.js
 !*.mjs
-!*.html
-!*.css
+!*.ts
 
 !*.ico
-!*.jpg
-!*.jpeg
-!*.png
 !*.gif
+!*.jpeg
+!*.jpg
 !*.svg
+!*.png
 
 !*/
 
 !*/.gitignore
 
-!*/.npmignore
-
 !*/.editorconfig
 
 !*/LICENSE
 
-!*/*.sh
 !*/*.json
 !*/*.md
+!*/*.sh
 !*/*.txt
 !*/*.xml
 
+!*/*.css
+!*/*.html
 !*/*.js
 !*/*.mjs
-!*/*.html
-!*/*.css
+!*/*.ts
 
 !*/*.ico
-!*/*.jpg
-!*/*.jpeg
-!*/*.png
 !*/*.gif
+!*/*.jpeg
+!*/*.jpg
+!*/*.png
 !*/*.svg
 
 package-lock.json
