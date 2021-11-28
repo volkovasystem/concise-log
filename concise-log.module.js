@@ -4,12 +4,12 @@
 	@license:module:
 		MIT License
 
-		Copyright (c) 2020-present Richeve S. Bebedor <richeve.bebedor@gmail.com>
+		Copyright (c) 2021-present Richeve S. Bebedor <richeve.bebedor@gmail.com>
 
 		@license:copyright:
 			Richeve S. Bebedor
 
-			<@license:year-range:2020-present;>
+			<@license:year-range:2021-present;>
 
 			<@license:contact-detail:richeve.bebedor@gmail.com;>
 		@license:copyright;
@@ -196,9 +196,20 @@ const conciseLog = (
 				.find(
 					(
 						( logToken ) => (
-								LOG_TYPE_LIST
-								.some( ( logType ) => ( logType === logToken ) )
-							=== true
+								(
+										LOG_TYPE_LIST
+										.some(
+											(
+												( logType ) => (
+														(
+																logType
+															===	logToken
+														)
+												)
+											)
+										)
+									=== true
+								)
 						)
 					)
 				)
@@ -309,6 +320,10 @@ const conciseLog = (
 				logStructure
 			)
 		);
+
+		return	(
+					concise
+				);
 	}
 );
 
@@ -533,17 +548,36 @@ const setLogEmitter = (
 					(
 							typeof
 							concise
-						==	"object"
+						!=	"object"
+					)
+				||
+					(
+							concise
+						===	null
 					)
 			){
 				(
 						concise
-						.log
 					=	(
-							conciseLog
+								(
+									concise
+								)
+							||
+								(
+									{ }
+								)
 						)
 				);
 			}
+
+			(
+					concise
+					.log
+				=	(
+						conciseLog
+						.bind( concise )
+					)
+			);
 		}
 	)( )
 );
@@ -553,5 +587,6 @@ const setLogEmitter = (
 		.exports
 	=	(
 			conciseLog
+			.bind( concise )
 		)
 );
